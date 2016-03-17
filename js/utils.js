@@ -45,7 +45,8 @@ var parseResult = function(data, ratingExists) {
   return books;
 }
 
-var populateListView = function(data) { console.log(data)
+var populateListView = function(data) {
+  data = parseResult(data);
   data.forEach(function(book) {
     var book = '<li>' +
       '<a href="#">' +

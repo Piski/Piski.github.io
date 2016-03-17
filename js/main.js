@@ -3,11 +3,7 @@ function init() {
     var input = this.value;
     delay(function() {
       //$("#suggestion-list").text(input);
-      getBooks(input, function(data) {
-        //$("#suggestion-list").text(JSON.stringify(data));
-        console.log(parseResult(data));
-        populateListView(data);
-      });
+      getBooks(input, populateListView);
     }, 1000 );
   });
 }
