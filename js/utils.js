@@ -44,3 +44,16 @@ var parseResult = function(data, ratingExists) {
   });
   return books;
 }
+
+var populateListView = function(data) {
+  data.forEach(function(book) {
+    var book = '<li>' +
+      '<a href="#">' +
+      '<img src="' + book.thumbnail + '">' +
+      '<h2>' + book.title + '</h2>' +
+      '<p>' + book.authors[0] + '</p>' +
+      '</a>'
+    '</li>';
+    $("#suggestion-list").append(book);
+  })
+}
