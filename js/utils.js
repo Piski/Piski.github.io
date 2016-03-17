@@ -6,14 +6,13 @@ var delay = (function(){
   };
 })();
 
-var getBooks = function(name) {
-  var query = "https://www.googleapis.com/books/v1/volumes?q=" + name;
-  console.log(query);
+var getBooks = function(name, callback) {
+  const query = "https://www.googleapis.com/books/v1/volumes?q=" + name;
   $.ajax({
     type: "GET",
     url: query,
     success: function(data) {
-      return data;
+      callback(data);
     },
     error: function(XMLHttpRequest, textStatus, errorThrown) {
         console.log("Status: " + textStatus); alert("Error: " + errorThrown);

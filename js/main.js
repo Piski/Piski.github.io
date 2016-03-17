@@ -3,8 +3,10 @@ function init() {
     var input = this.value;
     delay(function() {
       //$("#suggestion-list").text(input);
-      var result = getBooks(input);
-      console.log(result);
+      getBooks(input, function(data) {
+        $("#suggestion-list").text(JSON.Stringify(input));
+      });
+
     }, 1000 );
   });
 }
