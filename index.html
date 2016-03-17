@@ -20,25 +20,37 @@
 
 <body>
 
-  <div data-role="page" id="pageone">
-  <div data-role="header">
-    <h1>Insert Page Title Here</h1>
-  </div>
+
 
   <div data-role="page" id="pageone">
-  <div data-role="main" class="ui-content">
-    <a href="#pagetwo">Go to Page Two</a>
+    <div data-role="page" id="pageone">
+      <div data-role="header">
+        <h1>Insert Page Title Here</h1>
+      </div>
+
+      <div data-role="main" class="ui-content">
+        <a href="pagetwo">go to page two</a>
+      </div>
+
+      <div data-role="footer">
+        <h1>Insert Footer Text Here</h1>
+      </div>
+    </div>
   </div>
-</div>
 
 <div data-role="page" id="pagetwo">
-  <div data-role="main" class="ui-content">
-    <a href="#pageone">Go to Page One</a>
-  </div>
-</div>
+  <div data-role="page" id="pageone">
+    <div data-role="header">
+      <h1>Insert Page Title Here</h1>
+    </div>
 
-  <div data-role="footer">
-    <h1>Insert Footer Text Here</h1>
+    <div data-role="main" class="ui-content">
+      <a href="pageone">go to page one</a>
+    </div>
+
+    <div data-role="footer">
+      <h1>Insert Footer Text Here</h1>
+    </div>
   </div>
 </div>
   <!-- <script src="js/scripts.js"></script> -->
