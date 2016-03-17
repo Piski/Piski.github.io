@@ -3,7 +3,7 @@ function init() {
     var input = this.value;
     delay(function() {
       //$("#suggestion-list").text(input);
-      getBooks(input).then($("#suggestion-list").text(input));
+      getBooks(input);
     }, 1000 );
   });
 }

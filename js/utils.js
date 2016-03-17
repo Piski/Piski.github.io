@@ -20,8 +20,8 @@ var getBooks = function(name) {
       },
       error: function(XMLHttpRequest, textStatus, errorThrown) {
           callPending = false;
-          return undefined;
           console.log("Status: " + textStatus); alert("Error: " + errorThrown);
+          return undefined;
       }
     });
   } else {
