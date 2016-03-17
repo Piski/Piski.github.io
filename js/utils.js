@@ -38,6 +38,7 @@ var parseResult = function(data) { console.log(data)
       if(item.imageLinks) {
           book.thumbnail = item.imageLinks.thumbnail;
       }
+      book.title = item.title;
       books.push(book);
     }
   });
