@@ -4,7 +4,8 @@ function init() {
     delay(function() {
       //$("#suggestion-list").text(input);
       getBooks(input, function(data) {
-        $("#suggestion-list").text(JSON.stringify(input));
+        $("#suggestion-list").text(JSON.stringify(data));
+        console.log(data)
       });
 
     }, 1000 );
