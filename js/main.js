@@ -2,7 +2,8 @@ function init() {
   $('#search-field').on("input", function() {
     var input = this.value;
     delay(function() {
-      $("#suggestion-list").text(input);
+      //$("#suggestion-list").text(input);
+      getBooks(input).then($("#suggestion-list").text(input));
     }, 1000 );
   });
 }
