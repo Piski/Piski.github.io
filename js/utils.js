@@ -21,7 +21,7 @@ var getBooks = function(name, callback) {
   });
 }
 
-var parseResult(data) {
+var parseResult = function(data) {
   var books = [];
   var book = {};
   data.items.forEach(item) {
