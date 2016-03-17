@@ -1,8 +1,8 @@
 function init() {
   $('#search-field').on("input", function() {
-    var dInput = this.value;
-    console.log(dInput);
-    $("#suggestion-list").text(this.value);
+    delay(function(){
+      $("#suggestion-list").text(this.value);
+    }, 1000 );
   });
 }
 
