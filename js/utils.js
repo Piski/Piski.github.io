@@ -21,12 +21,13 @@ var getBooks = function(name, callback) {
   });
 }
 
-var parseResult = function(data) { console.log(data)
+var parseResult = function(data) {
   var books = [];
   var book = {};
   data.items.forEach(function(volume) {
     var item = volume.volumeInfo;
     if(item.language === "en") {
+      console.log(item, "item")
       book.rating = item.averageRating;
       book.authors = [];
       if(item.authors) {
@@ -39,6 +40,7 @@ var parseResult = function(data) { console.log(data)
           book.thumbnail = item.imageLinks.thumbnail;
       }
       book.title = item.title;
+      console.log(book)
       books.push(book);
     }
   });
