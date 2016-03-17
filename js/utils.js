@@ -28,9 +28,9 @@ var parseResult = function(data) {
     if(item.language === "en") {
       book.rating = item.averageRating;
       book.authors = [];
-      item.authors.forEach(author) {
+      item.authors.forEach(function(author) {
         book.authors.push(author);
-      }
+      });
       book.published = item.publishedDate;
       if(item.imageLinks) {
           book.thumbnail = item.imageLinks.thumbnail;
