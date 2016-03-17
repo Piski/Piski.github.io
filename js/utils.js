@@ -16,9 +16,9 @@ var getBooks = function(name) {
     $.ajax({
       type: "GET",
       url: query,
-      success: function(data) {
+      success: function(handleResponse) {
         callPending = false;
-        return data;
+        console.log(handleResponse)
       },
       error: function(XMLHttpRequest, textStatus, errorThrown) {
           callPending = false;
