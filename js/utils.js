@@ -23,8 +23,8 @@ var getBooks = function(name, callback) {
 
 var parseResult = function(data) {
   var books = [];
-  var book = {};
   data.items.forEach(function(volume) {
+    var book = {};
     var item = volume.volumeInfo;
     if(item.language === "en") {
       console.log(item, "item")
