@@ -19,19 +19,22 @@
 </head>
 
 <body>
-  <div data-role="header">HEADER</header>
+
   <div data-role="page" id="pageone">
-  <div data-role="main" class="ui-content">
-    <a href="#pagetwo" data-transition="slide">Go to Page Two</a>
+    <div data-role="header">HEADER</header>
+    <div data-role="main" class="ui-content">
+      <a href="#pagetwo" data-transition="slide">Go to Page Two</a>
+    </div>
+    <div data-role="footer" data-position="fixed">FOOTER</footer>
   </div>
-</div>
 
 <div data-role="page" id="pagetwo">
+  <div data-role="header">HEADER</header>
   <div data-role="main" class="ui-content">
     <a href="#pageone" data-transition="slide" data-direction="reverse">Go to Page One</a>
   </div>
+  <div data-role="footer" data-position="fixed">FOOTER</footer>
 </div>
-<div data-role="footer" data-position="fixed">FOOTER</footer>
   <!-- <script src="js/scripts.js"></script> -->
 </body>
 </html>
