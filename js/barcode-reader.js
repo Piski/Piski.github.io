@@ -6,7 +6,7 @@ function init() {
       target: document.querySelector('#pageone')    // Or '#yourElement' (optional)
     },
     decoder : {
-      readers : ["code_128_reader"]
+      readers : ["upc_reader"]
     }
   }, function(err) {
       if (err) {
