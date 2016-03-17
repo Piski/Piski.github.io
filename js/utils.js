@@ -25,7 +25,7 @@ var parseResult = function(data) { console.log(data)
   var books = [];
   var book = {};
   data.items.forEach(function(volume) {
-    var item = volume.item;
+    var item = volume.volumeInfo;
     if(item.language === "en") {
       book.rating = item.averageRating;
       book.authors = [];
