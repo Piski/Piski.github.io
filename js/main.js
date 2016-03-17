@@ -5,9 +5,8 @@ function init() {
       //$("#suggestion-list").text(input);
       getBooks(input, function(data) {
         $("#suggestion-list").text(JSON.stringify(data));
-        console.log(data)
+        console.log(parseResult(data));
       });
-
     }, 1000 );
   });
 }

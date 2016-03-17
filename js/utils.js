@@ -20,3 +20,23 @@ var getBooks = function(name, callback) {
     }
   });
 }
+
+var parseResult(data) {
+  var books = [];
+  var book = {};
+  data.items.forEach(item) {
+    if(item.language === "en") {
+      book.rating = item.averageRating;
+      book.authors = [];
+      item.authors.forEach(author) {
+        book.authors.push(author);
+      }
+      book.published = item.publishedDate;
+      if(item.imageLinks) {
+          book.thumbnail = item.imageLinks.thumbnail;
+      }
+      books.push(book);
+    }
+  }
+  return books;
+}
