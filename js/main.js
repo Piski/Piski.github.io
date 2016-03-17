@@ -6,6 +6,7 @@ function init() {
       getBooks(input, function(data) {
         //$("#suggestion-list").text(JSON.stringify(data));
         console.log(parseResult(data));
+        populateListView(data);
       });
     }, 1000 );
   });
