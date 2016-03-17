@@ -11,14 +11,14 @@ var delay = (function(){
 var getBooks = function(name) {
   if(!callPending) {
     callPending = true;
-    var query = "https://www.googleapis.com/books/v1/volumes?q=" + name + "&callback=handleResponse";
+    var query = "https://www.googleapis.com/books/v1/volumes?q=" + name;
     console.log(query);
     $.ajax({
       type: "GET",
       url: query,
-      success: function(handleResponse) {
+      success: function(data) {
         callPending = false;
-        console.log(handleResponse)
+        console.log(data)
       },
       error: function(XMLHttpRequest, textStatus, errorThrown) {
           callPending = false;
