@@ -85,7 +85,8 @@ var saveBook = function(id) {
   // TODO: Need a "global" object for all books in another list -> stringify that
   var books = [];
   if(localStorage.getItem("books") === null) {
-    books.push(ObjectSerializer(foundBooks[id]));
+    books.push(foundBooks[id]);
+    books = ObjectSerializer(foundBooks[id]);
     console.log("before putting: ",books)
     localStorage.setItem("books", books);
   } else {
