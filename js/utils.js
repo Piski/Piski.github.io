@@ -49,11 +49,13 @@ var populateListView = function(data) {
   data = parseResult(data);
   $("#suggestion-list").html("");
   data.forEach(function(book) {
-    var book = '<li data-icon="plus">' +
-      '<img src="' + book.thumbnail + '">' +
-      '<h2>' + book.title + '</h2>' +
-      '<p>' + book.authors[0] + '</p>' +
-    '</li>';
+    var book = '<a href="#">' +
+      '<li data-icon="plus">' +
+        '<img src="' + book.thumbnail + '">' +
+        '<h2>' + book.title + '</h2>' +
+        '<p>' + book.authors[0] + '</p>' +
+      '</li>' +
+    '</a>';
     $("#suggestion-list").append(book);
   })
 }
