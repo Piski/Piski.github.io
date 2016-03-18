@@ -44,7 +44,7 @@ var parseResult = function(data, ratingExists) {
       foundBooks.push(book);
     }
   });
-  return books;
+  return foundBooks;
 }
 
 var populateListView = function(data) {
@@ -113,7 +113,6 @@ var setSwipe = function() {
     }
     return false;
 });
-
 $(document).on('swiperight', '.ui-page', function(event) {
     if(event.handled !== true) {
         var prevpage = $(this).prev('[data-role="page"]');
