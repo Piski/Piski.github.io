@@ -57,11 +57,15 @@ var populateListView = function(data) {
         '<p>' + book.authors[0] + '</p>' +
         '<p class="rating">' + book.rating + '</p>' +
       '</a>' +
-      '<a href="#">Some Text</a>' +
+      '<a href="#" onClick="print"></a>' +
     '</li>';
     $list.append(book);
     $list.listview("refresh");
   })
+}
+
+var print = function(data) {
+  console.log(data)
 }
 
 var clearListView = function() {
