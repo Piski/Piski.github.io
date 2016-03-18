@@ -82,22 +82,26 @@ var setSaveListener = function() {
 }
 
 var saveBook = function(id) {
-  // TODO: Need a "global" object for all books in another list -> stringify that
   var books = [];
   if(localStorage.getItem("books") === null) {
     books.push(foundBooks[id]);
     books = ObjectSerializer(books);
-    console.log("before putting: ",books)
     localStorage.setItem("books", books);
   } else {
     var books = localStorage.getItem("books");
     books = ObjectDeserializer(books);
-    console.log("before push:", books)
     books.push(foundBooks[id]);
     books = ObjectSerializer(books);
     localStorage.setItem("books", books);
   }
+}
 
+var retrieveBooks = function() {
+  if(localStorage.getItem("books") === null) {
+    return [];
+  } else {
+    return ObjectDeserializer(localStorage.getItem("books"));
+  }
 }
 
 var clearListView = function() {
