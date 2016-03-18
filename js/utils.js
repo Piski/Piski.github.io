@@ -68,8 +68,14 @@ var populateListView = function(data) {
 
 // TODO: Deserialize object from localStorage
 
-var saveBook = function() {
-  console.log($(this).parent().index())
+var setSaveListener = function() {
+  $("#suggestion-list").on("click", ".save-book", function() {
+    saveBook($(this).parent().index());
+  })
+}
+
+var saveBook = function(id) {
+  console.log(id)
 }
 
 var clearListView = function() {
