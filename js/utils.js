@@ -48,7 +48,7 @@ var parseResult = function(data, ratingExists) {
 var populateListView = function(data) {
   data = parseResult(data);
   data.forEach(function(book) {
-    var book = '<li>' +
+    var book = '<li data-icon="plus">' +
       '<img src="' + book.thumbnail + '">' +
       '<h2>' + book.title + '</h2>' +
       '<p>' + book.authors[0] + '</p>' +
