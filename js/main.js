@@ -1,10 +1,14 @@
 function init() {
   $('#search-field').on("input", function() {
     var input = this.value;
-    delay(function() {
+    if(input > 0 ) {
       $.mobile.loading( 'show' );
-      getBooks(input, populateListView);
-    }, 1000 );
+      delay(function() {
+        getBooks(input, populateListView);
+      }, 1000 );
+    } else {
+      clearListView();
+    }
   });
 }
 

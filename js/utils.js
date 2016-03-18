@@ -48,7 +48,7 @@ var populateListView = function(data) {
   $.mobile.loading( 'hide' );
   data = parseResult(data);
   var $list = $("#suggestion-list");
-  $list.html("");
+  clearListView();
   data.forEach(function(book) {
     var book = '<li data-icon="plus">' +
       '<a href="#">' +
@@ -60,4 +60,9 @@ var populateListView = function(data) {
     $list.append(book);
     $list.listview("refresh");
   })
+}
+
+var clearListView = function() {
+  $("#suggestion-list").html("");
+  $.mobile.loading( 'hide' );
 }
