@@ -1,4 +1,5 @@
-var books = [];
+var foundBooks = [];
+var storedBooks = [];
 
 var delay = (function(){
   var timer = 0;
@@ -40,7 +41,7 @@ var parseResult = function(data, ratingExists) {
       book.thumbnail = item.imageLinks.thumbnail
         ? item.imageLinks.thumbnail : item.imageLinks.smallThumbnail;
       book.title = item.title;
-      books.push(book);
+      foundBooks.push(book);
     }
   });
   return books;
@@ -82,7 +83,18 @@ var setSaveListener = function() {
 
 var saveBook = function(id) {
   // TODO: Need a "global" object for all books in another list -> stringify that
-  console.log(books)
+  var books = [];
+  if(localStorage.getItem("books") === null) {
+    books = ObjectSerializer(foundBooks[id]);
+    localStorage.setItem("books", books);
+  } else {
+    books = localStorage.getItem("books");
+    books = ObjectDeserializer(books);
+    books.push(foundBooks[id]);
+    books = ObjectSerializer(books);
+    localStorage.setItem("books", books);
+  }
+
 }
 
 var clearListView = function() {
