@@ -1,3 +1,5 @@
+var books = [];
+
 var delay = (function(){
   var timer = 0;
   return function(callback, ms){
@@ -22,7 +24,7 @@ var getBooks = function(name, callback) {
 }
 
 var parseResult = function(data, ratingExists) {
-  var books = [];
+  //var books = [];
   data.items.forEach(function(volume) {
     var book = {};
     var item = volume.volumeInfo;
@@ -64,9 +66,13 @@ var populateListView = function(data) {
   })
 }
 
-// TODO: Serialize object for localStorage
+var ObjectSerializer = function(o) {
+  return JSON.stringify(o);
+}
 
-// TODO: Deserialize object from localStorage
+var ObjectDeserializer = function(o) {
+  return JSON.parse(o)
+}
 
 var setSaveListener = function() {
   $("#suggestion-list").on("click", ".save-book", function() {
@@ -75,7 +81,8 @@ var setSaveListener = function() {
 }
 
 var saveBook = function(id) {
-  console.log(id)
+  // TODO: Need a "global" object for all books in another list -> stringify that
+  console.log(books)
 }
 
 var clearListView = function() {
