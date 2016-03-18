@@ -10,6 +10,13 @@ function init() {
       clearListView();
     }
   });
+
+  $( document ).on( "swipeleft", page, function() {
+    $.mobile.changePage("#pagetwo", { transition: "slide" });
+  });
+  $( document ).on( "swiperight", page, function() {
+    $.mobile.changePage("#pagetwo", { transition: "slide", direction: "reverse" });
+  });
 }
 
 (function() {
