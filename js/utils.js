@@ -26,7 +26,7 @@ var parseResult = function(data, ratingExists) {
   data.items.forEach(function(volume) {
     var book = {};
     var item = volume.volumeInfo;
-    if(item.language === "en" && !ratingExists) {
+    if(item.language === "en" && !ratingExists && item.imageLinks) {
       book.rating = item.averageRating;
       book.authors = [];
       if(item.authors) {
@@ -35,10 +35,8 @@ var parseResult = function(data, ratingExists) {
         });
       }
       book.published = item.publishedDate;
-      if(item.imageLinks) { console.log(item.imageLinks)
-          book.thumbnail = item.imageLinks.thumbnail
-            ? item.imageLinks.thumbnail : item.imageLinks.smallThumbnail;
-      }
+      book.thumbnail = item.imageLinks.thumbnail
+        ? item.imageLinks.thumbnail : item.imageLinks.smallThumbnail;
       book.title = item.title;
       books.push(book);
     }
