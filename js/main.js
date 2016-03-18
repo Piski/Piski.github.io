@@ -1,7 +1,7 @@
 function init() {
   setSwipe();
   setInputListener();
-  $("#suggestion-list").on("click li a", function() {
+  $("#suggestion-list").on("click li .save-book", function() {
     alert(this)
   })
 }

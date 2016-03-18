@@ -51,10 +51,12 @@ var populateListView = function(data) {
   clearListView();
   data.forEach(function(book) {
     var book = '<li>' +
-      '<img src="' + book.thumbnail + '">' +
-      '<h2>' + book.title + '</h2>' +
-      '<p>' + book.authors[0] + '</p>' +
-      '<p class="rating">' + book.rating + '</p>' +
+      '<a href="#">' +
+        '<img src="' + book.thumbnail + '">' +
+        '<h2>' + book.title + '</h2>' +
+        '<p>' + book.authors[0] + '</p>' +
+        '<p class="rating">' + book.rating + '</p>' +
+      '</a>' +
       '<a href="#" class="save-book" data-icon="plus"></a>' +
     '</li>';
     $list.append(book);
