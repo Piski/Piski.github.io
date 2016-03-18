@@ -11,7 +11,7 @@
   <!-- <link rel="stylesheet" href="css/styles.css?v=1.0"> -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
   <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.css">
-  <link rel="stylesheet" href="lib/css/jquery.mobile.flatui.css" />
+  <!-- <link rel="stylesheet" href="lib/css/jquery.mobile.flatui.css" /> -->
   <link rel="stylesheet" href="css/main.css" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js"></script>
 
@@ -23,12 +23,16 @@
 <body>
   <div data-role="page" id="pageone">
     <div data-role="header">
-      <h1>BookNote</h1>
+      <div data-role="navbar">
+        <ul>
+          <li><a href="#pageone">Find</a></li>
+          <li><a href="#pagetwo">List</a></li>
+        </ul>
+      </div>
     </div>
 
     <div data-role="main" class="ui-content">
-      <a href="#pagetwo">go to page two</a>
-      <label for="search-field">Search a book</label>
+      <!-- <label for="search-field">Search a book</label> -->
       <input type="text" name="name" id="search-field" value=""  />
       <ul data-role="listview" data-inset="true" id="suggestion-list"></ul>
     </div>
