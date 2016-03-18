@@ -53,6 +53,7 @@ var populateListView = function(data) {
       '<h2>' + book.title + '</h2>' +
       '<p>' + book.authors[0] + '</p>' +
     '</li>';
+    $("#suggestion-list").html("");
     $("#suggestion-list").append(book);
   })
 }
