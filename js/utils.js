@@ -64,8 +64,12 @@ var populateListView = function(data) {
   })
 }
 
-var saveBook = function(data) {
-  console.log(data)
+// TODO: Serialize object for localStorage
+
+// TODO: Deserialize object from localStorage
+
+var saveBook = function() {
+  console.log($(this).parent().index())
 }
 
 var clearListView = function() {
