@@ -35,8 +35,9 @@ var parseResult = function(data, ratingExists) {
         });
       }
       book.published = item.publishedDate;
-      if(item.imageLinks) {
-          book.thumbnail = item.imageLinks.thumbnail;
+      if(item.imageLinks) { console.log(item.imageLinks)
+          book.thumbnail = item.imageLinks.thumbnail
+            ? item.imageLinks.thumbnail : item.imageLinks.smallThumbnail;
       }
       book.title = item.title;
       books.push(book);
