@@ -86,10 +86,12 @@ var saveBook = function(id) {
   var books = [];
   if(localStorage.getItem("books") === null) {
     books.push(ObjectSerializer(foundBooks[id]));
+    console.log("before putting: ",books)
     localStorage.setItem("books", books);
   } else {
     var books = localStorage.getItem("books");
     books = ObjectDeserializer(books);
+    console.log("before push:", books)
     books.push(foundBooks[id]);
     books = ObjectSerializer(books);
     localStorage.setItem("books", books);
