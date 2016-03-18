@@ -50,13 +50,14 @@ var populateListView = function(data) {
   var $list = $("#suggestion-list");
   clearListView();
   data.forEach(function(book) {
-    var book = '<li data-icon="plus">' +
+    var book = '<li>' +
       '<a href="#">' +
         '<img src="' + book.thumbnail + '">' +
         '<h2>' + book.title + '</h2>' +
         '<p>' + book.authors[0] + '</p>' +
         '<p class="rating">' + book.rating + '</p>' +
       '</a>' +
+      '<a href="#">Some Text</a>' +
     '</li>';
     $list.append(book);
     $list.listview("refresh");
