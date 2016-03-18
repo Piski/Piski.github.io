@@ -47,7 +47,8 @@ var parseResult = function(data, ratingExists) {
 var populateListView = function(data) {
   $.mobile.loading( 'hide' );
   data = parseResult(data);
-  $("#suggestion-list").html("");
+  var $list = $("#suggestion-list");
+  $list.html("");
   data.forEach(function(book) {
     var book = '<li data-icon="plus">' +
       '<a href="#">' +
@@ -56,6 +57,7 @@ var populateListView = function(data) {
         '<p>' + book.authors[0] + '</p>' +
       '</a>' +
     '</li>';
-    $("#suggestion-list").append(book);
+    $list.append(book);
+    $list.listview("refresh");
   })
 }
