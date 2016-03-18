@@ -55,6 +55,7 @@ var populateListView = function(data) {
         '<img src="' + book.thumbnail + '">' +
         '<h2>' + book.title + '</h2>' +
         '<p>' + book.authors[0] + '</p>' +
+        '<p>' + book.rating + '</p>' +
       '</a>' +
     '</li>';
     $list.append(book);
