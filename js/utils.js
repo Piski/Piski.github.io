@@ -178,7 +178,7 @@ $(document).on("pagebeforeshow","#pagetwo",function() {
 var toast = function(msg) {
 	$("<div class='ui-loader ui-overlay-shadow ui-body-e ui-corner-all'><h3>" + msg + "</h3></div>")
 	.css({ display: "block",
-		opacity: 0.90,
+		opacity: 0.1,
 		position: "fixed",
 		padding: "7px",
 		"text-align": "center",
