@@ -61,7 +61,7 @@ var populateBookList = function(data) {
     '</li>';
     $list.append(book);
     $list.listview("refresh");
-  }
+  })
 }
 
 var populateListView = function(data) {
