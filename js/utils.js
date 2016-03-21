@@ -60,7 +60,6 @@ var populateBookList = function(data) {
       '<a href="#" class="save-book" data-icon="plus"></a>' +
     '</li>';
     $list.append(book);
-    $list.listview("refresh");
   })
 }
 
@@ -162,3 +161,7 @@ var setInputListener = function() {
     }
   });
 }
+
+$('#pagetwo').bind('pageinit', function() {
+  $('#books-list').listview('refresh');
+});
