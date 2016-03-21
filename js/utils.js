@@ -24,7 +24,7 @@ var getBooks = function(name, callback) {
   });
 }
 
-var parseResult = function(data, ratingExists) {
+var parseResult = function(data, ratingExists) { console.log(data)
   //var books = [];
   data.items.forEach(function(volume) {
     var book = {};
