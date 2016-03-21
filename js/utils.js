@@ -48,7 +48,7 @@ var parseResult = function(data, ratingExists) { console.log(data)
 }
 
 var populateBookList = function(data) {
-  var $list = $("#book-list");
+  var $list = $("#books-list");
   data.forEach(function(book) {
     var book = '<li>' +
       '<a href="#">' +
