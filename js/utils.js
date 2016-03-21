@@ -168,8 +168,14 @@ var setInputListener = function() {
   });
 }
 
-$('#pagetwo').bind('pageinit', function() {
+$('.pagetwo').on('click', function() {
   console.log("page two init")
+  var books = retrieveBooks();
+  populateBookList(books);
+  $('#books-list').listview('refresh');
+});
+
+$(document).on("pagebeforeshow","#pagetwo",function() {
   var books = retrieveBooks();
   populateBookList(books);
   $('#books-list').listview('refresh');
