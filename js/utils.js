@@ -169,8 +169,8 @@ var setInputListener = function() {
 }
 
 $('#pagetwo').bind('pageinit', function() {
+  console.log("page two init")
   var books = retrieveBooks();
-  console.log(books);
   populateBookList(books);
   $('#books-list').listview('refresh');
 });
