@@ -58,7 +58,7 @@ var populateBookList = function(data) {
         '<p>' + book.authors[0] + '</p>' +
         '<p class="rating">' + book.rating + '</p>' +
       '</a>' +
-      '<a href="#" class="save-book" data-icon="plus"></a>' +
+      '<a href="#" class="delete-book" data-icon="minus"></a>' +
     '</li>';
     $list.append(book);
     $list.listview().listview('refresh');
@@ -96,6 +96,7 @@ var ObjectDeserializer = function(o) {
 var setSaveListener = function() {
   $("#suggestion-list").on("click", ".save-book", function() {
     saveBook($(this).parent().index());
+    toast("You succesfuly saved a book");
   })
 }
 
@@ -168,15 +169,24 @@ var setInputListener = function() {
   });
 }
 
-$('.pagetwo').on('click', function() {
-  console.log("page two init")
-  var books = retrieveBooks();
-  populateBookList(books);
-  $('#books-list').listview('refresh');
-});
-
 $(document).on("pagebeforeshow","#pagetwo",function() {
   var books = retrieveBooks();
   populateBookList(books);
   $('#books-list').listview('refresh');
 });
+
+var toast = function(msg) {
+	$("<div class='ui-loader ui-overlay-shadow ui-body-e ui-corner-all'><h3>" + msg + "</h3></div>")
+	.css({ display: "block",
+		opacity: 0.90,
+		position: "fixed",
+		padding: "7px",
+		"text-align": "center",
+		width: "270px",
+		left: ($(window).width() - 284)/2,
+		top: $(window).height()/2 })
+	  .appendTo( $.mobile.pageContainer ).delay( 1500 )
+	  .fadeOut( 400, function(){
+		 $(this).remove();
+	});
+}
