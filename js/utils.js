@@ -202,6 +202,7 @@ var deleteBook = function(id) {
 
 var setDeleteListener = function() {
   $("#books-list").on("click", ".delete-book", function() {
+    $(this).hide();
     deleteBook($(this).parent().index());
     toast("Book deleted");
   })
