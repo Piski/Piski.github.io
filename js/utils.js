@@ -49,6 +49,7 @@ var parseResult = function(data, ratingExists) { console.log(data)
 
 var populateBookList = function(data) {
   var $list = $("#books-list");
+  clearBookList();
   data.forEach(function(book) {
     var book = '<li>' +
       '<a href="#">' +
@@ -60,7 +61,6 @@ var populateBookList = function(data) {
       '<a href="#" class="save-book" data-icon="plus"></a>' +
     '</li>';
     $list.append(book);
-    clearBookList();
     $list.listview().listview('refresh');
   })
 }
