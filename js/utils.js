@@ -183,7 +183,7 @@ var toast = function(msg) {
 		padding: "7px",
 		"text-align": "center",
 		width: "270px",
-		left: ($(window).width() - 284)/2,
+		left: 0,
 		top: 0 })
 	  .appendTo( $.mobile.pageContainer ).delay( 1500 )
 	  .fadeOut( 400, function(){
