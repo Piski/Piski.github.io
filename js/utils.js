@@ -60,7 +60,7 @@ var populateBookList = function(data) {
       '<a href="#" class="save-book" data-icon="plus"></a>' +
     '</li>';
     $list.append(book);
-    $list.listview().listview('refresh');
+    //$list.listview().listview('refresh');
   })
 }
 
