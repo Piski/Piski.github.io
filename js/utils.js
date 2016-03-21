@@ -47,11 +47,26 @@ var parseResult = function(data, ratingExists) { console.log(data)
   return foundBooks;
 }
 
-var populateListView = function(data, id) {
-  id = id ? id : "#suggestion-list";
+var populateBookList = function(data) {
+  var $list = $("#book-list");
+  data.forEach(function(book) {
+    var book = '<li>' +
+      '<a href="#">' +
+        '<img src="' + book.thumbnail + '">' +
+        '<h2>' + book.title + '</h2>' +
+        '<p>' + book.authors[0] + '</p>' +
+        '<p class="rating">' + book.rating + '</p>' +
+      '</a>' +
+      '<a href="#" class="save-book" data-icon="plus"></a>' +
+    '</li>';
+    $list.append(book);
+    $list.listview("refresh");
+}
+
+var populateListView = function(data) {
   $.mobile.loading( 'hide' );
   data = parseResult(data);
-  var $list = $(id);
+  var $list = $("#suggestion-list");
   clearListView();
   data.forEach(function(book) {
     var book = '<li>' +
