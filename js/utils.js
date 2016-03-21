@@ -96,7 +96,8 @@ var ObjectDeserializer = function(o) {
 var setSaveListener = function() {
   $("#suggestion-list").on("click", ".save-book", function() {
     saveBook($(this).parent().index());
-    toast("You succesfuly saved a book");
+    console.log($(this))
+    toast("You succesfuly saved " + $(this).text());
   })
 }
 
@@ -169,7 +170,7 @@ var setInputListener = function() {
   });
 }
 
-$(document).on("pagebeforeshow","#pagetwo",function() {
+$(document).on("pagebeforeshow","#pagetwo", function() {
   var books = retrieveBooks();
   populateBookList(books);
   $('#books-list').listview('refresh');
@@ -187,6 +188,10 @@ var toast = function(msg) {
 		top: 0 })
 	  .appendTo( $.mobile.pageContainer ).delay( 1500 )
 	  .fadeOut( 400, function(){
-		 $(this).remove();
-	});
+  		 $(this).remove();
+  	});
+}
+
+var setDeleteListener = function() {
+
 }
