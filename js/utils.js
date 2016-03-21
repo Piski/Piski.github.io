@@ -96,8 +96,7 @@ var ObjectDeserializer = function(o) {
 var setSaveListener = function() {
   $("#suggestion-list").on("click", ".save-book", function() {
     saveBook($(this).parent().index());
-    console.log($(this))
-    toast("You succesfuly saved " + $(this).text());
+    toast("Book saved");
   })
 }
 
@@ -192,6 +191,18 @@ var toast = function(msg) {
   	});
 }
 
-var setDeleteListener = function() {
+var deleteBook = function(id) {
+  var books = localStorage.getItem("books");
+  books = ObjectDeserializer(books);
+  books.splice(id, 1);
+  books = ObjectSerializer(books);
+  localStorage.setItem("books", books);
+  $("#books-list").listview("refresh");
+}
 
+var setDeleteListener = function() {
+  $("#books-list").on("click", ".delete-book", function() {
+    deleteBook($(this).parent().index());
+    toast("Book deleted");
+  })
 }
