@@ -47,10 +47,11 @@ var parseResult = function(data, ratingExists) {
   return foundBooks;
 }
 
-var populateListView = function(data) {
+var populateListView = function(data, id) {
+  id = id ? id : "#suggestion-list";
   $.mobile.loading( 'hide' );
   data = parseResult(data);
-  var $list = $("#suggestion-list");
+  var $list = $(id);
   clearListView();
   data.forEach(function(book) {
     var book = '<li>' +
