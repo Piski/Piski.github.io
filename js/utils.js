@@ -172,5 +172,5 @@ $('#pagetwo').bind('pageinit', function() {
   var books = retrieveBooks();
   console.log(books);
   populateBookList(books);
-  //$('#books-list').listview('refresh');
+  $('#books-list').listview('refresh');
 });
