@@ -183,6 +183,7 @@ var toast = function(msg) {
 		padding: "7px",
 		"text-align": "center",
 		width: ($(window).width()),
+    background-color: rgba(255, 153, 36, 0.5),
 		left: 0,
 		top: 0 })
 	  .appendTo( $.mobile.pageContainer ).delay( 1500 )
