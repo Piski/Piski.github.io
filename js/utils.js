@@ -60,7 +60,8 @@ var populateBookList = function(data) {
       '<a href="#" class="save-book" data-icon="plus"></a>' +
     '</li>';
     $list.append(book);
-    //$list.listview().listview('refresh');
+    clearBookList();
+    $list.listview().listview('refresh');
   })
 }
 
@@ -126,6 +127,10 @@ var clearListView = function() {
   $.mobile.loading( 'hide' );
 }
 
+var clearBookList = function() {
+  $("#books-list").html("");
+}
+
 var setSwipe = function() {
   $(document).on('swipeleft', '.ui-page', function(event) {
     if(event.handled !== true) {
@@ -167,5 +172,5 @@ $('#pagetwo').bind('pageinit', function() {
   var books = retrieveBooks();
   console.log(books);
   populateBookList(books);
-  $('#books-list').listview('refresh');
+  //$('#books-list').listview('refresh');
 });
