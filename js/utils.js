@@ -197,12 +197,12 @@ var deleteBook = function(id) {
   books.splice(id, 1);
   books = ObjectSerializer(books);
   localStorage.setItem("books", books);
-  $("#books-list").listview("refresh");
+  //$("#books-list").listview("refresh");
 }
 
 var setDeleteListener = function() {
   $("#books-list").on("click", ".delete-book", function() {
-    $(this).hide();
+    $(this).parent().hide();
     deleteBook($(this).parent().index());
     toast("Book deleted");
   })
