@@ -5,6 +5,7 @@ function init() {
     } else {
       populateEditableView();
       imageInputListener();
+      setUpdateListeners();
     }
   });
 }

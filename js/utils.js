@@ -258,3 +258,21 @@ var imageInputListener = function() {
     }
   });
 }
+
+var setUpdateListeners = function() {
+  $("#editpage").on("click", ".update-book", function() {
+    updateBook($(self).parent().index());
+    toast("Book updated");
+  })
+  $("#editpage").on("click", ".cancel-update", function() {
+    $.mobile.changePage("#pagetwo");
+  })
+}
+
+var updateBook = function(id) {
+  var books = localStorage.getItem("books");
+  books = ObjectDeserializer(books);
+  books.splice(id, 1, editableBook);
+  books = ObjectSerializer(books);
+  localStorage.setItem("books", books);
+}
