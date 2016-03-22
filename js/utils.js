@@ -226,19 +226,16 @@ var setDeleteListener = function() {
 var setEditListener = function() {
   $("#books-list").on("click", ".edit-book", function() {
     editableBook = retrieveBook($(this).parent().index());
-    console.log(editableBook)
     $.mobile.changePage("#editpage");
   });
 }
 
 var retrieveBook = function(id) {
-  console.log("id:", id)
   var books = localStorage.getItem("books");
   books = ObjectDeserializer(books);
-  console.log("books:", books)
   return books[id];
 }
 
-var populateEditableView() {
-  
+var populateEditableView = function() {
+
 }
