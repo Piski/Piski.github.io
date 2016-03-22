@@ -204,7 +204,11 @@ var deleteBook = function(id) {
 var setDeleteListener = function() {
   $("#books-list").on("click", ".delete-book", function() {
     $(this).parent().hide();
-    deleteBook($(this).parent().index());
+    areYouSure("Are you sure?", "---description---", "Exit", function() {
+      // user has confirmed, do stuff
+      deleteBook($(this).parent().index());
+      
+    });
     toast("Book deleted");
   })
 }
