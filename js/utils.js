@@ -58,7 +58,7 @@ var populateBookList = function(data) {
         '<p class="rating">' + book.rating + '</p>' +
       '</a>' +
       '<a href="#" class="delete-book" data-icon="minus"></a>' +
-      '<ul data-role="listview" data-theme="b">' +
+      '<ul data-role="listview" data-theme="b" class="inner-list">' +
         '<li><a href="#">Condor</a></li>' +
         '<li><a href="#">Eagle</a></li>' +
         '<li><a href="#">Sparrow</a></li>' +
@@ -66,6 +66,7 @@ var populateBookList = function(data) {
     '</li>';
     $list.append(book);
     $list.listview().listview('refresh');
+    $(".inner-list").listview("refresh");
   })
 }
 
