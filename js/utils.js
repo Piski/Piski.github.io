@@ -66,7 +66,7 @@ var populateBookList = function(data) {
     '</li>';
     $list.append(book);
     $list.listview().listview('refresh');
-    $(".inner-list").listview("refresh");
+    $(".inner-list").listview().listview("refresh");
   })
 }
 
