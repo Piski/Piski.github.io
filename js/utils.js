@@ -215,7 +215,7 @@ var areYouSure = function(title, description, src, button, callback) {
 var setDeleteListener = function() {
   $("#books-list").on("click", ".delete-book", function() {
     var self = this;
-    console.($(this).parent().find("img"))
+    console.log($(this).parent().find("img"))
     areYouSure("Are you sure you want to delete?", $(self).parent().find("h2").text(), "blank", "Delete", function() {
       $(self).parent().hide();
       deleteBook($(self).parent().index());
