@@ -3,7 +3,7 @@ function init() {
     console.log(editableBook)
     if(typeof editableBook === "undefined"
       || editableBook === null
-      || editableBook.length < 1) {
+      || $.isEmptyObject(editableBook)) {
       $.mobile.changePage("#pagetwo");
     } else {
       populateEditableView();
