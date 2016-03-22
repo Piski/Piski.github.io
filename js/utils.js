@@ -51,12 +51,10 @@ var populateBookList = function(data) {
   clearBookList();
   data.forEach(function(book) {
     var book = '<li data-role="collapsible" data-inset="false">' +
-      '<a href="#">' +
-        '<img src="' + book.thumbnail + '">' +
-        '<h2>' + book.title + '</h2>' +
-        '<p>' + book.authors[0] + '</p>' +
-        '<p class="rating">' + book.rating + '</p>' +
-      '</a>' +
+    '<img src="' + book.thumbnail + '">' +
+    '<h2>' + book.title + '</h2>' +
+    '<p>' + book.authors[0] + '</p>' +
+    '<p class="rating">' + book.rating + '</p>' +
       '<a href="#" class="delete-book" data-icon="minus"></a>' +
       '<ul data-role="listview" data-theme="b" class="inner-list">' +
         '<li><a href="#">Condor</a></li>' +
