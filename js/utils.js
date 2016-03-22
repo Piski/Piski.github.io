@@ -201,11 +201,11 @@ var deleteBook = function(id) {
   //$("#books-list").listview("refresh");
 }
 
-var areYouSure = function(title, description, src, button, callback) {
-  $("#sure .sure-1").text(title);
-  $("#sure .sure-2").text(description);
-  $("#sure .sure-img").src = src;
-  $("#sure .sure-do").text(button).on("click.sure", function() {
+var areYouSure = function(options, callback) {
+  $("#sure .sure-1").text(options.title);
+  $("#sure .sure-2").text(options.description);
+  $("#sure .sure-img").src = options.image;
+  $("#sure .sure-do").text(options.button).on("click.sure", function() {
     callback();
     $(this).off("click.sure");
   });
@@ -215,11 +215,16 @@ var areYouSure = function(title, description, src, button, callback) {
 var setDeleteListener = function() {
   $("#books-list").on("click", ".delete-book", function() {
     var self = this;
-    console.log($(this).parent().find("img"))
-    areYouSure("Are you sure you want to delete?", $(self).parent().find("h2").text(), "blank", "Delete", function() {
-      $(self).parent().hide();
-      deleteBook($(self).parent().index());
-      toast("Book deleted");
+    var options = {
+      title: "Are you sure you want to delete?",
+      description: $(self).parent().find("h2").text(),
+      image: $(this).parent().find("img").attr("src"),
+      button: "Delete"
+    };
+    areYouSure(options, function() {
+        $(self).parent().hide();
+        deleteBook($(self).parent().index());
+        toast("Book deleted");
     });
   })
 }
