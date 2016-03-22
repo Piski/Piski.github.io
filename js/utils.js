@@ -1,5 +1,6 @@
 var foundBooks = [];
 var storedBooks = [];
+var editableBook = {};
 
 var delay = (function(){
   var timer = 0;
@@ -224,9 +225,14 @@ var setDeleteListener = function() {
 
 var setEditListener = function() {
   $("#books-list").on("click", ".edit-book", function() {
-    console.log("edit")
-
-    var self = this;
+    editableBook = retrieveBook($(self).parent().index());
+    console.log(editableBook)
     $.mobile.changePage("#editpage");
   });
+}
+
+var retrieveBook = function(id) {
+  var books = localStorage.getItem("books");
+  books = ObjectDeserializer(books);
+  return books[id];
 }
