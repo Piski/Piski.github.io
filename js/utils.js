@@ -201,9 +201,10 @@ var deleteBook = function(id) {
   //$("#books-list").listview("refresh");
 }
 
-var areYouSure = function(text1, text2, button, callback) {
-  $("#sure .sure-1").text(text1);
-  $("#sure .sure-2").text(text2);
+var areYouSure = function(title, description,, src button, callback) {
+  $("#sure .sure-1").text(title);
+  $("#sure .sure-2").text(description);
+  $("#sure .sure-img").src = src;
   $("#sure .sure-do").text(button).on("click.sure", function() {
     callback();
     $(this).off("click.sure");
@@ -214,8 +215,8 @@ var areYouSure = function(text1, text2, button, callback) {
 var setDeleteListener = function() {
   $("#books-list").on("click", ".delete-book", function() {
     var self = this;
-    console.log()
-    areYouSure("Are you sure you want to delete?", $(self).parent().find("h2").text(), "Delete", function() {
+    console.($(this).parent().find("img"))
+    areYouSure("Are you sure you want to delete?", $(self).parent().find("h2").text(), "blank", "Delete", function() {
       $(self).parent().hide();
       deleteBook($(self).parent().index());
       toast("Book deleted");
