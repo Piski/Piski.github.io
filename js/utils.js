@@ -50,17 +50,14 @@ var populateBookList = function(data) {
   var $list = $("#books-list");
   clearBookList();
   data.forEach(function(book) {
-    var book = '<li data-role="collapsible" data-inset="false">' +
-    '<img src="' + book.thumbnail + '">' +
-    '<h2>' + book.title + '</h2>' +
-    '<p>' + book.authors[0] + '</p>' +
-    '<p class="rating">' + book.rating + '</p>' +
-      '<a href="#" class="delete-book" data-icon="minus"></a>' +
-      '<ul data-role="listview" data-theme="b" class="inner-list">' +
-        '<li><a href="#">Condor</a></li>' +
-        '<li><a href="#">Eagle</a></li>' +
-        '<li><a href="#">Sparrow</a></li>' +
-      '</ul>' +
+    var book = '<li>' +
+      '<a href="#" class="edit-book">' +
+        '<img src="' + book.thumbnail + '">' +
+        '<h2>' + book.title + '</h2>' +
+        '<p>' + book.authors[0] + '</p>' +
+        '<p class="rating">' + book.rating + '</p>' +
+      '</a>' +
+      '<a href="#" class="delete-book" data-icon="minus"></a>'
     '</li>';
     $list.append(book);
     $list.listview().listview('refresh');
@@ -223,4 +220,11 @@ var setDeleteListener = function() {
         toast("Book deleted");
     });
   })
+}
+
+var editListener = function() {
+  $("#books-list").on("click", ".edit-book", function() {
+    var self = this;
+    $.mobile.changePage("#pageedit");
+  }
 }
