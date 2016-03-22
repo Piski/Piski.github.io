@@ -226,5 +226,5 @@ var editListener = function() {
   $("#books-list").on("click", ".edit-book", function() {
     var self = this;
     $.mobile.changePage("#pageedit");
-  }
+  });
 }
