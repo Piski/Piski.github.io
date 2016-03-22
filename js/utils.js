@@ -232,7 +232,9 @@ var setEditListener = function() {
 }
 
 var retrieveBook = function(id) {
+  console.log("id:", id)
   var books = localStorage.getItem("books");
   books = ObjectDeserializer(books);
+  console.log("books:", books)
   return books[id];
 }
