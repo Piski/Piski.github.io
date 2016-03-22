@@ -236,6 +236,9 @@ var retrieveBook = function(id) {
   return books[id];
 }
 
-var populateEditableView = function() {
+var populateEditableView = function() { console.log(editableBook)
+  $("#title").val(editableBook.title);
+  $("#writer").val(editableBook.title);
+  $("#rating").val(editableBook.rating);
 
 }
