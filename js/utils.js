@@ -225,8 +225,8 @@ var setDeleteListener = function() {
 var setEditListener = function() {
   $("#books-list").on("click", ".edit-book", function() {
     console.log("edit")
-    
+
     var self = this;
-    $.mobile.changePage("#pageedit");
+    $.mobile.changePage("#editpage");
   });
 }
