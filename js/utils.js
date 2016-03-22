@@ -58,6 +58,11 @@ var populateBookList = function(data) {
         '<p class="rating">' + book.rating + '</p>' +
       '</a>' +
       '<a href="#" class="delete-book" data-icon="minus"></a>' +
+      '<ul data-role="listview" data-theme="b">' +
+        '<li><a href="#">Condor</a></li>' +
+        '<li><a href="#">Eagle</a></li>' +
+        '<li><a href="#">Sparrow</a></li>' +
+      '</ul>' +
     '</li>';
     $list.append(book);
     $list.listview().listview('refresh');
