@@ -204,7 +204,7 @@ var deleteBook = function(id) {
 var areYouSure = function(options, callback) {
   $("#sure .sure-1").text(options.title);
   $("#sure .sure-2").text(options.description);
-  $("#sure .sure-img").src = options.image;
+  $("#sure .sure-img").attr("src") = options.image;
   $("#sure .sure-do").text(options.button).on("click.sure", function() {
     callback();
     $(this).off("click.sure");
