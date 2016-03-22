@@ -250,8 +250,6 @@ var imageInputListener = function() {
     var self = this;
     if(self.value.length > 0 ) {
       delay(function() {
-        console.log("BOM");
-        console.log($(self).val())
         $image.attr("src", $(self).val())
         $image.show();
       }, 1000 );
