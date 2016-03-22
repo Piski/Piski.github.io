@@ -24,8 +24,7 @@ var getBooks = function(name, callback) {
   });
 }
 
-var parseResult = function(data, ratingExists) { console.log(data)
-  //var books = [];
+var parseResult = function(data, ratingExists) {
   data.items.forEach(function(volume) {
     var book = {};
     var item = volume.volumeInfo;
@@ -142,17 +141,17 @@ var setSwipe = function() {
         event.handled = true;
     }
     return false;
-});
-$(document).on('swiperight', '.ui-page', function(event) {
-    if(event.handled !== true) {
-        var prevpage = $(this).prev('[data-role="page"]');
-        if (prevpage.length > 0) {
-            $.mobile.changePage(prevpage, {transition: "slide", reverse: true}, true, true);
-        }
-        event.handled = true;
-    }
-    return false;
-});
+  });
+  $(document).on('swiperight', '.ui-page', function(event) {
+      if(event.handled !== true) {
+          var prevpage = $(this).prev('[data-role="page"]');
+          if (prevpage.length > 0) {
+              $.mobile.changePage(prevpage, {transition: "slide", reverse: true}, true, true);
+          }
+          event.handled = true;
+      }
+      return false;
+  });
 }
 
 var setInputListener = function() {
@@ -168,12 +167,6 @@ var setInputListener = function() {
     }
   });
 }
-
-$(document).on("pagebeforeshow","#pagetwo", function() {
-  var books = retrieveBooks();
-  populateBookList(books);
-  $('#books-list').listview('refresh');
-});
 
 var toast = function(msg) {
 	$("<div class='ui-loader ui-overlay-shadow ui-body-e ui-corner-all'><h3>" + msg + "</h3></div>")
@@ -198,15 +191,11 @@ var deleteBook = function(id) {
   books.splice(id, 1);
   books = ObjectSerializer(books);
   localStorage.setItem("books", books);
-  //$("#books-list").listview("refresh");
 }
 
 var areYouSure = function(options, callback) {
   $("#sure .sure-1").text(options.title);
   $("#sure .sure-2").text(options.description);
-  console.log(
-    $("#sure .sure-img")
-  )
   $("#sure .sure-img").attr("src", options.image);
   $("#sure .sure-do").text(options.button).on("click.sure", function() {
     callback();
