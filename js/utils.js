@@ -220,7 +220,7 @@ var setDeleteListener = function() {
     var self = this;
     var options = {
       title: "Are you sure you want to delete?",
-      description: $(self).parent().find("h2").text(),
+      description: "",
       image: $(this).parent().find("img").attr("src"),
       button: "Delete"
     };
