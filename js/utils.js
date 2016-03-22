@@ -248,7 +248,7 @@ var imageInputListener = function() {
   var $image = $("#image");
   $('#image-src').on("input", function() {
     var self = this;
-    if(self.input.length > 0 ) {
+    if(self.value.length > 0 ) {
       delay(function() {
         $image.attr("src", $(self).val())
         $image.show();
