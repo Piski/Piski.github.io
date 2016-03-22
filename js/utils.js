@@ -201,7 +201,7 @@ var deleteBook = function(id) {
   //$("#books-list").listview("refresh");
 }
 
-var areYouSure = function(title, description,, src button, callback) {
+var areYouSure = function(title, description, src, button, callback) {
   $("#sure .sure-1").text(title);
   $("#sure .sure-2").text(description);
   $("#sure .sure-img").src = src;
