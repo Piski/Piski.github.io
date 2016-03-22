@@ -1,6 +1,9 @@
 function init() {
   $(document).on("pagebeforeshow","#editpage", function() {
-    if(typeof editableBook === "undefined" || editableBook === null) {
+    console.log(editableBook)
+    if(typeof editableBook === "undefined"
+      || editableBook === null
+      || editableBook.length < 1) {
       $.mobile.changePage("#pagetwo");
     } else {
       populateEditableView();
