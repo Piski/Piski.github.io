@@ -238,3 +238,7 @@ var retrieveBook = function(id) {
   console.log("books:", books)
   return books[id];
 }
+
+var populateEditableView() {
+  
+}
