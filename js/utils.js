@@ -201,13 +201,23 @@ var deleteBook = function(id) {
   //$("#books-list").listview("refresh");
 }
 
+var areYouSure = function(text1, text2, button, callback) {
+  $("#sure .sure-1").text(text1);
+  $("#sure .sure-2").text(text2);
+  $("#sure .sure-do").text(button).on("click.sure", function() {
+    callback();
+    $(this).off("click.sure");
+  });
+  $.mobile.changePage("#sure");
+}
+
 var setDeleteListener = function() {
   $("#books-list").on("click", ".delete-book", function() {
     $(this).parent().hide();
     areYouSure("Are you sure?", "---description---", "Exit", function() {
       // user has confirmed, do stuff
       deleteBook($(this).parent().index());
-      
+
     });
     toast("Book deleted");
   })
