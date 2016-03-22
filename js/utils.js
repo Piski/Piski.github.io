@@ -225,7 +225,7 @@ var setDeleteListener = function() {
 
 var setEditListener = function() {
   $("#books-list").on("click", ".edit-book", function() {
-    editableBook = retrieveBook($(self).parent().index());
+    editableBook = retrieveBook($(this).parent().index());
     console.log(editableBook)
     $.mobile.changePage("#editpage");
   });
