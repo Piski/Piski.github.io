@@ -214,8 +214,8 @@ var areYouSure = function(text1, text2, button, callback) {
 var setDeleteListener = function() {
   $("#books-list").on("click", ".delete-book", function() {
     var self = this;
-    console.log($(self).parent().find("h2"))
-    areYouSure("Are you sure?", "", "Delete", function() {
+    console.log()
+    areYouSure("Are you sure you want to delete?", $(self).parent().find("h2").text(), "Delete", function() {
       $(self).parent().hide();
       deleteBook($(self).parent().index());
       toast("Book deleted");
