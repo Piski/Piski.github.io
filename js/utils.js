@@ -238,7 +238,7 @@ var retrieveBook = function(id) {
 
 var populateEditableView = function() {
   $("#title").val(editableBook.title);
-  $("#writer").val(editableBook.writer);
+  $("#writer").val(editableBook.writers);
   $("#rating").val(editableBook.rating);
   $("#image-src").val(editableBook.thumbnail);
   $("#image").attr("src", editableBook.thumbnail);
