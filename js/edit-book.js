@@ -1,6 +1,6 @@
 function init() {
   $(document).on("pagebeforeshow","#editpage", function() {
-    console.log(editableBook)
+    $(this).show();
     if(typeof editableBook === "undefined"
       || editableBook === null
       || $.isEmptyObject(editableBook)) {

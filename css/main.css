@@ -8,3 +8,7 @@
   margin-right: auto;
   max-width: 150px;
 }
+
+#edit-page {
+  display: none;
+}
