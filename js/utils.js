@@ -222,7 +222,7 @@ var setDeleteListener = function() {
   })
 }
 
-var editListener = function() {
+var setEditListener = function() {
   $("#books-list").on("click", ".edit-book", function() {
     var self = this;
     $.mobile.changePage("#pageedit");
