@@ -50,7 +50,7 @@ var populateBookList = function(data) {
   var $list = $("#books-list");
   clearBookList();
   data.forEach(function(book) {
-    var book = '<li>' +
+    var book = '<li data-role="collapsible" data-inset="false">' +
       '<a href="#">' +
         '<img src="' + book.thumbnail + '">' +
         '<h2>' + book.title + '</h2>' +
