@@ -207,7 +207,7 @@ var areYouSure = function(options, callback) {
   console.log(
     $("#sure .sure-img")
   )
-  $("#sure .sure-img").src = options.image;
+  $("#sure .sure-img").attr("src", options.image);
   $("#sure .sure-do").text(options.button).on("click.sure", function() {
     callback();
     $(this).off("click.sure");
