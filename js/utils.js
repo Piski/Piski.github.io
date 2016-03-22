@@ -236,9 +236,25 @@ var retrieveBook = function(id) {
   return books[id];
 }
 
-var populateEditableView = function() { console.log(editableBook)
+var populateEditableView = function() {
   $("#title").val(editableBook.title);
-  $("#writer").val(editableBook.title);
+  $("#writer").val(editableBook.writer);
   $("#rating").val(editableBook.rating);
+  $("#image-src").val(editableBook.thumbnail);
+  $("#image").attr("src", editableBook.thumbnail);
+}
 
+var imageInputListener = function() {
+  var $image = $("#image");
+  $('#image-src').on("input", function() {
+    var self = this;
+    if(self.input.length > 0 ) {
+      delay(function() {
+        $image.attr("src", $(self).val())
+        $image.show();
+      }, 1000 );
+    } else {
+      $image.hide();
+    }
+  });
 }
