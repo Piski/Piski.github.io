@@ -1,6 +1,5 @@
 function init() {
   $(document).on("pagebeforeshow","#editpage", function() {
-    $("#edit-page").show();
     if(typeof editableBook === "undefined"
       || editableBook === null
       || $.isEmptyObject(editableBook)) {
@@ -9,6 +8,7 @@ function init() {
       populateEditableView();
       imageInputListener();
       setUpdateListeners();
+      $("#edit-page").show();
     }
   });
 }
