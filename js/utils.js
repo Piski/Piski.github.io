@@ -269,16 +269,6 @@ var setUpdateListeners = function() {
   })
 }
 
-var updateBook = function(id) {
-  editableBook = {
-    authors: [$("#writer").val()],
-    title: $("#title").val(),
-    thumbnail: $("#image-src").val(),
-    rating: $("#rating").val()
-  }
-  var books = localStorage.getItem("books");
-  books = ObjectDeserializer(books);
-  books.splice(id, 1, editableBook);
-  books = ObjectSerializer(books);
-  localStorage.setItem("books", books);
+var setHeader = function() {
+  $("[data-role=header]").toolbar();
 }

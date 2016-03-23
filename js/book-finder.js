@@ -1,4 +1,5 @@
 function init() {
+  setHeader();
   setSwipe();
   setInputListener();
   setSaveListener();
