@@ -7,6 +7,7 @@ function init() {
   setSwipe();
   setInputListener();
   setSaveListener();
+  newToast();
 }
 
 (function() {

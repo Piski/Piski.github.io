@@ -12,3 +12,7 @@
 #edit-page {
   display: none;
 }
+
+.ui-header.ui-title {
+  text-align: center;
+}
