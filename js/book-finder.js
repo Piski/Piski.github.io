@@ -7,7 +7,9 @@ function init() {
   setSwipe();
   setInputListener();
   setSaveListener();
-
+  $(document).bind("mobileinit", function(){
+    $.mobile.pushStateEnabled = false;
+  });
 }
 
 (function() {
