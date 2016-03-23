@@ -21,3 +21,10 @@
 .color-active {
   background-color: #00CFBC;
 }
+
+.update-book {
+  color:white;
+  &:hover {
+    background-color: #00CFBC;
+  }
+}
