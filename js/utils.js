@@ -276,9 +276,10 @@ var updateBook = function(id) {
     thumbnail: $("#image-src").val(),
     rating: $("#rating").val()
   }
+  console.log(id)
   var books = localStorage.getItem("books");
   books = ObjectDeserializer(books);
-  books.splice(id, 1, editableBook);
+  books.splice(id-1, 1, editableBook);
   books = ObjectSerializer(books);
   localStorage.setItem("books", books);
 }
