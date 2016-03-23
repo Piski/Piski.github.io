@@ -7,13 +7,11 @@
   margin-left: auto;
   margin-right: auto;
   max-width: 150px;
+  margin-bottom: 30px;
 }
 
 #edit-page {
   display: none;
-  img {
-    margin-bottom: 30px;
-  }
 }
 
 .header-title {
