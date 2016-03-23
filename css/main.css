@@ -22,7 +22,7 @@
   background-color: #00CFBC;
 }
 
-.update-book {
+#update-book {
   color:white;
   &:hover {
     background-color: #00CFBC;
