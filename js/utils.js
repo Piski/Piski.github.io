@@ -236,7 +236,7 @@ var retrieveBook = function(id) {
   return books[id];
 }
 
-var populateEditableView = function() { console.log(editableBook)
+var populateEditableView = function() {
   $("#title").val(editableBook.title);
   $("#writer").val(editableBook.authors);
   $("#rating").val(editableBook.rating);
@@ -276,7 +276,6 @@ var updateBook = function(id) {
     thumbnail: $("#image-src").val(),
     rating: $("#rating").val()
   }
-  console.log(id)
   var books = localStorage.getItem("books");
   books = ObjectDeserializer(books);
   books.splice(id, 1, editableBook);

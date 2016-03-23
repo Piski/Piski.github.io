@@ -60,11 +60,10 @@
     </div>
 
     <div data-role="main" class="ui-content" id="edit-page">
-      <label for="title">Title:</label>
-      <h1><input id="title"></input></h1>
-      <h2><input id="writer"></input></h2>
-      <h2><input id="rating"></input></h2>
-      <h3><input id="image-src"></input></h3>
+      <h1><input id="title" data-clear-btn="true" placeholder="Title"></input></h1>
+      <h2><input id="writer" data-clear-btn="true" placeholder="Authors"></input></h2>
+      <h2><input id="rating" data-clear-btn="true" placeholder="Rating"></input></h2>
+      <h3><input id="image-src" data-clear-btn="true" placeholder="Path"></input></h3>
       <img id="image"></img>
       <a href="#" class="update-book" data-role="button" data-theme="b" data-rel="back">Save</a>
       <a href="#" class="cancel-update" data-role="button" data-theme="c" data-rel="back">Cancel</a>
