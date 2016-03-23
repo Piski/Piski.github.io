@@ -1,7 +1,7 @@
 function init() {
   setDeleteListener();
   setEditListener();
-  $(document).on("pagebeforeshow","#pagetwo", function() { console.log("loading page two");
+  $(document).on("pagebeforeshow","#pagetwo", function() {
     //$(".pageone").removeClass("ui-state-persist");
     //$(".pagetwo").addClass("ui-state-persist");
     var books = retrieveBooks();

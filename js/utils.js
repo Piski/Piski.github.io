@@ -264,11 +264,6 @@ var setUpdateListeners = function() {
     updateBook($(self).index());
     toast("Book updated");
   })
-  $("#editpage").on("click", ".cancel-update", function() {
-    //$.mobile.changePage("#pagetwo", { allowSamePageTransition: true });
-    console.log("fire")
-    //$.mobile.back();
-  })
 }
 
 var updateBook = function(id) {
