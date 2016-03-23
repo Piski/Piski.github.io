@@ -19,6 +19,5 @@
 }
 
 .color-active {
-  -webkit-filter: brightness(50%);
-  filter: brightness(50%);
+  background-color: #00CFBC;
 }
