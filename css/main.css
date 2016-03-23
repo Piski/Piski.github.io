@@ -11,6 +11,9 @@
 
 #edit-page {
   display: none;
+  img {
+    margin-bottom: 30px;
+  }
 }
 
 .header-title {
