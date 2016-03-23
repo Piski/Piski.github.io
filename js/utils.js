@@ -265,7 +265,7 @@ var setUpdateListeners = function() {
     toast("Book updated");
   })
   $("#editpage").on("click", ".cancel-update", function() {
-    $.mobile.changePage("#pagetwo");
+    $.mobile.changePage("#pagetwo", { allowSamePageTransition: true });
   })
 }
 
