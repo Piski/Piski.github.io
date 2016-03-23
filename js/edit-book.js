@@ -5,6 +5,8 @@ function init() {
       || $.isEmptyObject(editableBook)) {
       $.mobile.changePage("#pagetwo");
     } else {
+      $(".pageone").removeClass("color-active");
+      $(".pagetwo").removeClass("color-active");
       populateEditableView();
       imageInputListener();
       setUpdateListeners();
