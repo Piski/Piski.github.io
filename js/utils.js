@@ -267,7 +267,7 @@ var setUpdateListeners = function() {
   $("#editpage").on("click", ".cancel-update", function() {
     //$.mobile.changePage("#pagetwo", { allowSamePageTransition: true });
     console.log("fire")
-    $.mobile.back();
+    //$.mobile.back();
   })
 }
 
