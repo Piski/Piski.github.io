@@ -2,8 +2,8 @@ function init() {
   setDeleteListener();
   setEditListener();
   $(document).on("pagebeforeshow","#pagetwo", function() {
-    //$(".pageone").removeClass("ui-state-persist");
-    //$(".pagetwo").addClass("ui-state-persist");
+    $(".pageone").removeClass("color-active");
+    $(".pagetwo").addClass("color-active");
     var books = retrieveBooks();
     populateBookList(books);
     $('#books-list').listview('refresh');
