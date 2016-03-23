@@ -97,7 +97,8 @@ var ObjectDeserializer = function(o) {
 var setSaveListener = function() {
   $("#suggestion-list").on("click", ".save-book", function() {
     saveBook($(this).parent().index());
-    toast("Book saved");
+    //toast("Book saved");
+    newToast("Book saved");
   })
 }
 
