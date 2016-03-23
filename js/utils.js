@@ -58,7 +58,7 @@ var populateBookList = function(data) {
         '<p>' + book.authors[0] + '</p>' +
         '<p class="rating">' + book.rating + '</p>' +
       '</a>' +
-      '<a href="#" class="delete-book" data-icon="minus"></a>'
+      '<a href="#" class="delete-book" data-icon="delete"></a>'
     '</li>';
     $list.append(book);
     $list.listview().listview('refresh');
