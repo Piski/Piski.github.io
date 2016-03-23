@@ -3,7 +3,7 @@ function init() {
     if(typeof editableBook === "undefined"
       || editableBook === null
       || $.isEmptyObject(editableBook)) {
-      //$.mobile.changePage("#pagetwo");
+      $.mobile.changePage("#pagetwo");
     } else {
       populateEditableView();
       imageInputListener();
