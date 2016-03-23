@@ -238,7 +238,7 @@ var retrieveBook = function(id) {
 
 var populateEditableView = function() { console.log(editableBook)
   $("#title").val(editableBook.title);
-  $("#writer").val(editableBook.writer);
+  $("#writer").val(editableBook.authors);
   $("#rating").val(editableBook.rating);
   $("#image-src").val(editableBook.thumbnail);
   $("#image").attr("src", editableBook.thumbnail);
@@ -270,6 +270,12 @@ var setUpdateListeners = function() {
 }
 
 var updateBook = function(id) {
+  editableBook = {
+    authors: [$("#writer").val()],
+    title: $("#title").val(),
+    thumbnail: $("#image-src").val(),
+    rating: $("#rating").val()
+  }
   var books = localStorage.getItem("books");
   books = ObjectDeserializer(books);
   books.splice(id, 1, editableBook);
