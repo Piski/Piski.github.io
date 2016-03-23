@@ -1,7 +1,7 @@
 function init() {
   $(document).on("pagebeforeshow","#pageone", function() {
-    $(".pagetwo").removeClass("ui-btn-active ui-state-persist");
-    $(".pageone").addClass("ui-btn-active ui-state-persist");
+    $(".pagetwo").removeClass("ui-state-persist");
+    $(".pageone").addClass("ui-state-persist");
   });
   setHeader();
   setSwipe();
