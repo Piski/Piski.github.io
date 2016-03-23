@@ -261,7 +261,7 @@ var imageInputListener = function() {
 
 var setUpdateListeners = function() {
   $("#editpage").on("click", ".update-book", function() {
-    updateBook($(self).parent().index());
+    updateBook($(self).index());
     toast("Book updated");
   })
   $("#editpage").on("click", ".cancel-update", function() {
@@ -279,7 +279,7 @@ var updateBook = function(id) {
   console.log(id)
   var books = localStorage.getItem("books");
   books = ObjectDeserializer(books);
-  books.splice(id-1, 1, editableBook);
+  books.splice(id, 1, editableBook);
   books = ObjectSerializer(books);
   localStorage.setItem("books", books);
 }
