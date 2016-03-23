@@ -9,6 +9,7 @@ function init() {
   setSaveListener();
   $(document).bind("mobileinit", function(){
     $.mobile.pushStateEnabled = false;
+    $.mobile.defaultPageTransition = 'none'; 
   });
 }
 
